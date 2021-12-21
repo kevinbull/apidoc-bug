@@ -5,8 +5,8 @@ const rootPath = path.normalize(path.join(__dirname, '..', '..'))
 const options = {
   includeFilters: [ ".*\\.js$" ],
   src: [
-    path.join(rootPath, 'src', 'routes'),
-    path.join(rootPath, 'docs', 'src')
+    path.join(rootPath, 'docs', 'src'),
+    path.join(rootPath, 'src', 'routes')
   ],
   dest: path.resolve('./docs/dist/'),
   config: path.resolve('./apidoc.config.js'),
