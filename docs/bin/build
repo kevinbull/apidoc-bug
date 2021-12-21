@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+const path = require('path')
+const nodemon = require('nodemon')
+
+const src = path.resolve('./docs/src')
+const markdown = path.resolve('./docs/markdown')
+const apidocConfig = path.resolve('./apidoc.config.js')
+
+// call this same file but don't pass --watch flag. The --watch flags in this are used by nodemon, not this script.
+nodemon(`${__filename} --watch ${src} --watch ${apidocConfig} --watch ${markdown} -e json,js,md`)
+nodemon.on('quit', process.exit)
